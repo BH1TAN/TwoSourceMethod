@@ -1,5 +1,5 @@
 function TSMR(minn,maxn,step,mb,deadt,times,sigmat)
-%进行最长时间为maxtime秒，步进为step的测量，并将结果显示
+%进行最低计数率minn，步进为step的测量，并将结果显示
 global data
 
 i = minn;
@@ -12,6 +12,8 @@ while(i <= maxn)
     j = j+1;
     
 end
-plot(data);
+semilogy(minn:step:maxn,data);
+xlabel('counting rate(/s)');
+ylabel('sigma');
 
 end
